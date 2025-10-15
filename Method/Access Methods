@@ -1,0 +1,28 @@
+class Employee {
+    String name;
+    int age;
+
+    // method to set employee details
+    void setDetails(String n, int a) {
+        name = n;
+        age = a;
+    }
+
+    // method to display employee details
+    void displayDetails() {
+        System.out.println("Employee Name: " + name);
+        System.out.println("Employee Age: " + age);
+    }
+}
+
+public class EmployeeTest {
+    public static void main(String[] args) {
+        Employee emp1 = new Employee();
+        emp1.setDetails("Sunil", 30);
+        emp1.displayDetails();
+
+        Employee emp2 = new Employee();
+        emp2.setDetails("Kamal", 25);
+        emp2.displayDetails();
+    }
+}
