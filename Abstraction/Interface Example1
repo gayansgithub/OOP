@@ -1,0 +1,48 @@
+interface Printable {
+    void printDetails();
+}
+
+class Book implements Printable {
+
+    String title;
+    String author;
+
+    Book(String title, String author) {
+        this.title = title;
+        this.author = author;
+    }
+
+    @Override
+    public void printDetails() {
+        System.out.println("Book Title: " + title);
+        System.out.println("Author: " + author);
+    }
+}
+
+class Pen implements Printable {
+
+    String brand;
+    String color;
+
+    Pen(String brand, String color) {
+        this.brand = brand;
+        this.color = color;
+    }
+
+    @Override
+    public void printDetails() {
+        System.out.println("Pen Brand: " + brand);
+        System.out.println("Color: " + color);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Printable b = new Book("Java Basics", "John Smith");
+        Printable p = new Pen("Atlas", "Blue");
+
+        b.printDetails();
+        p.printDetails();
+    }
+}
