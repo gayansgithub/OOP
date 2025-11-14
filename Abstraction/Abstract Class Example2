@@ -1,0 +1,40 @@
+abstract class Appliance {
+
+    // Abstract method
+    abstract void turnOn();
+
+    // Concrete method
+    void turnOff() {
+        System.out.println("Appliance is turned off.");
+    }
+}
+
+class Fan extends Appliance {
+
+    @Override
+    void turnOn() {
+        System.out.println("Fan starts rotating.");
+    }
+}
+
+class Light extends Appliance {
+
+    @Override
+    void turnOn() {
+        System.out.println("Light is glowing.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Appliance fan = new Fan();
+        Appliance light = new Light();
+
+        fan.turnOn();
+        fan.turnOff();
+
+        light.turnOn();
+        light.turnOff();
+    }
+}
