@@ -1,0 +1,38 @@
+// Class demonstrating method overloading
+class StudentInfo {
+
+    // Method 1: Display only name
+    void display(String name) {
+        System.out.println("Student Name: " + name);
+    }
+
+    // Method 2: Display name and age
+    void display(String name, int age) {
+        System.out.println("Student Name: " + name);
+        System.out.println("Age: " + age);
+    }
+
+    // Method 3: Display name, age, and marks
+    void display(String name, int age, double marks) {
+        System.out.println("Student Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Marks: " + marks);
+    }
+}
+
+public class StudentDemo {
+    public static void main(String[] args) {
+
+        // Create object
+        StudentInfo student = new StudentInfo();
+
+        // Call overloaded methods
+        student.display("Gayan");  
+        System.out.println("------------------------");
+
+        student.display("Kasun", 20);  
+        System.out.println("------------------------");
+
+        student.display("Amali", 19, 88.5);
+    }
+}
