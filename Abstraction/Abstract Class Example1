@@ -1,0 +1,92 @@
+abstract class BankAccount {
+    String accountNumber;
+    double balance;
+
+    BankAccount(String accountNumber, double balance) {
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+    }
+
+    void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposited: " + amount);
+        System.out.println("New Balance: " + balance);
+    }
+
+    // Abstract methods
+    abstract void withdraw(double amount);
+    abstract double calculateInterest();
+}
+
+// -------------------------
+// Savings Account
+// -------------------------
+class SavingsAccount extends BankAccount {
+
+    SavingsAccount(String accountNumber, double balance) {
+        super(accountNumber, balance);
+    }
+
+    @Override
+    void withdraw(double amount) {
+        if (balance - amount >= 1000) {
+            balance -= amount;
+            System.out.println("Savings Withdrawal Successful. New Balance: " + balance);
+        } else {
+            System.out.println("Withdrawal Denied! Minimum balance of 1000 required.");
+        }
+    }
+
+    @Override
+    double calculateInterest() {
+        return balance * 0.05;  // 5% interest
+    }
+}
+
+// -------------------------
+// Current Account
+// -------------------------
+class CurrentAccount extends BankAccount {
+
+    CurrentAccount(String accountNumber, double balance) {
+        super(accountNumber, balance);
+    }
+
+    @Override
+    void withdraw(double amount) {
+        if (balance - amount >= 500) {
+            balance -= amount;
+            System.out.println("Current Withdrawal Successful. New Balance: " + balance);
+        } else {
+            System.out.println("Withdrawal Denied! Minimum balance of 500 required.");
+        }
+    }
+
+    @Override
+    double calculateInterest() {
+        return balance * 0.03;  // 3% interest
+    }
+}
+
+// -------------------------
+// Main Class
+// -------------------------
+public class Main {
+    public static void main(String[] args) {
+
+        SavingsAccount sa = new SavingsAccount("SA001", 5000);
+        CurrentAccount ca = new CurrentAccount("CA001", 3000);
+
+        // Savings Account operations
+        sa.deposit(1000);
+        sa.withdraw(2000);
+        System.out.println("Savings Account Interest: " + sa.calculateInterest());
+
+        System.out.println();
+
+        // Current Account operations
+        ca.deposit(500);
+        ca.withdraw(1000);
+        System.out.println("Current Account Interest: " + ca.calculateInterest());
+    }
+}
