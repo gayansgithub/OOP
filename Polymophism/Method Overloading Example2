@@ -1,0 +1,43 @@
+// Parent class
+class Employee {
+    void calculateSalary() {
+        System.out.println("Calculating salary for an employee...");
+    }
+}
+
+// Child class 1
+class FullTimeEmployee extends Employee {
+    
+    @Override
+    void calculateSalary() {
+        System.out.println("Full-Time Employee Salary: Rs. 80,000");
+    }
+}
+
+// Child class 2
+class PartTimeEmployee extends Employee {
+    
+    @Override
+    void calculateSalary() {
+        System.out.println("Part-Time Employee Salary: Rs. 25,000");
+    }
+}
+
+public class EmployeeDemo {
+    public static void main(String[] args) {
+        
+        // Parent class object
+        Employee emp = new Employee();
+        emp.calculateSalary();
+        System.out.println("-------------------------");
+
+        // Full-time employee object
+        Employee fullTime = new FullTimeEmployee();   // parent reference, child object
+        fullTime.calculateSalary();
+        System.out.println("-------------------------");
+
+        // Part-time employee object
+        Employee partTime = new PartTimeEmployee();   // parent reference, child object
+        partTime.calculateSalary();
+    }
+}
