@@ -1,0 +1,13 @@
+public class ArrayExample {
+    public static void main(String[] args) {
+
+        try {
+            int[] numbers = {10, 20, 30};
+            System.out.println(numbers[5]); // risky code (invalid index)
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: You tried to access an invalid array index!");
+        }
+
+        System.out.println("Program continues...");
+    }
+}
