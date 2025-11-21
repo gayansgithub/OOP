@@ -1,0 +1,15 @@
+public class ArrayTryCatchFinally {
+    public static void main(String[] args) {
+
+        try {
+            int[] marks = {85, 90, 75};
+            System.out.println("Mark: " + marks[5]); // risky code (invalid index)
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: Invalid array index accessed!");
+        } finally {
+            System.out.println("Finally block executed: Array operation completed.");
+        }
+
+        System.out.println("Program continues...");
+    }
+}
