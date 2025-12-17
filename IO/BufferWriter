@@ -1,0 +1,27 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class BufferedWriterExample {
+    public static void main(String[] args) {
+        try {
+            // Create BufferedWriter object
+            BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"));
+
+            // Write lines to the file
+            writer.write("Hello Students!");
+            writer.newLine();   // Writes a new line
+            writer.write("This text is written using BufferedWriter.");
+            writer.newLine();
+            writer.write("BufferedWriter is fast and efficient.");
+
+            // Close the writer
+            writer.close();
+
+            System.out.println("Data successfully written to the file.");
+
+        } catch (IOException e) {
+            System.out.println("Error writing to the file.");
+        }
+    }
+}
