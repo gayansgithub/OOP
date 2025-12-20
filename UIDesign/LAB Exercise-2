@@ -1,0 +1,57 @@
+import javax.swing.*;
+import java.awt.event.*;
+
+public class LoginForm {
+
+    public static void main(String[] args) {
+
+        // Create JFrame
+        JFrame frame = new JFrame("Login Form");
+        frame.setSize(350, 200);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Create JPanel
+        JPanel panel = new JPanel();
+        frame.add(panel);
+        panel.setLayout(null); // absolute positioning
+
+        // Create components
+        JLabel userLabel = new JLabel("Username:");
+        userLabel.setBounds(30, 30, 80, 25);
+        panel.add(userLabel);
+
+        JTextField userText = new JTextField();
+        userText.setBounds(120, 30, 150, 25);
+        panel.add(userText);
+
+        JLabel passLabel = new JLabel("Password:");
+        passLabel.setBounds(30, 70, 80, 25);
+        panel.add(passLabel);
+
+        JPasswordField passText = new JPasswordField();
+        passText.setBounds(120, 70, 150, 25);
+        panel.add(passText);
+
+        JButton loginButton = new JButton("Login");
+        loginButton.setBounds(120, 110, 80, 25);
+        panel.add(loginButton);
+
+        // Button click event
+        loginButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                String username = userText.getText();
+                String password = new String(passText.getPassword());
+
+                if (username.equals("admin") && password.equals("123")) {
+                    JOptionPane.showMessageDialog(frame, "Login Successful");
+                } else {
+                    JOptionPane.showMessageDialog(frame, "Invalid Username or Password");
+                }
+            }
+        });
+
+        // Display frame
+        frame.setVisible(true);
+    }
+}
