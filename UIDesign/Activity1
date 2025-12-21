@@ -1,0 +1,28 @@
+import javax.swing.*;
+
+public class SimpleUI {
+
+    public static void main(String[] args) {
+
+        // Create JFrame
+        JFrame frame = new JFrame("Simple UI");
+        frame.setSize(300, 200);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Disable layout manager (absolute positioning)
+        frame.setLayout(null);
+
+        // Create Text Field
+        JTextField textField = new JTextField();
+        textField.setBounds(50, 40, 180, 25); // x, y, width, height
+        frame.add(textField);
+
+        // Create Button
+        JButton button = new JButton("Submit");
+        button.setBounds(100, 90, 80, 30); // x, y, width, height
+        frame.add(button);
+
+        // Display frame
+        frame.setVisible(true);
+    }
+}
